@@ -1,12 +1,8 @@
-import './App.css'
+import { Provider } from 'react-redux';
+import { store } from './rtk-query/store';
 
 function App() {
-
-  return (
-    <>
-      test
-    </>
-  )
+  return <Provider store={store}>test</Provider>;
 }
 
-export default App
+export default App;
