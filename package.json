@@ -11,7 +11,8 @@
     "fetch-openapi": "node ./src/swagger/get-openapi-spec.js",
     "orval-generate-api": "orval --config ./src/orval/swr.config.ts",
     "rq-generate-api": "orval --config ./src/orval/rq.config.ts",
-    "rtk-generate-api": "npx @rtk-query/codegen-openapi ./src/rtk-query/rtk-query.config.ts"
+    "rtk-generate-api": "npx @rtk-query/codegen-openapi ./src/rtk-query/rtk-query.config.ts",
+    "zodios-generate-api": "openapi-zod-client ./src/swagger/openAPI.json -o ./src/zodios/generated-client.ts"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
@@ -28,7 +29,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
     "swr": "^2.2.5",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
@@ -39,6 +41,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "openapi-zod-client": "^1.16.2",
     "prettier": "^2.4.1",
     "prettier-plugin-organize-imports": "^3.2.2",
     "typescript": "^5.2.2",
