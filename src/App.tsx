@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux';
 import SwrConsumer from './orval/swr';
+import RtkConsumer from './rtk-query';
 import { store } from './rtk-query/store';
 import ZodiosConsumer from './zodios';
 
@@ -12,6 +13,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ZodiosConsumer />
         <SwrConsumer />
+        <RtkConsumer />
       </QueryClientProvider>
     </Provider>
   );

@@ -9,8 +9,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "fetch-openapi": "node ./src/swagger/get-openapi-spec.js",
-    "orval-generate-api": "orval --config ./src/orval/swr.config.ts",
-    "rq-generate-api": "orval --config ./src/orval/rq.config.ts",
+    "swr-generate-api": "orval --config ./src/orval/swr.config.ts",
+    "rq-generate-api": "orval --config ./src/orval/react-query.config.ts",
     "rtk-generate-api": "npx @rtk-query/codegen-openapi ./src/rtk-query/rtk-query.config.ts",
     "zodios-generate-api": "openapi-zod-client ./src/swagger/openAPI.json -o ./src/zodios/generated-client.ts"
   },
