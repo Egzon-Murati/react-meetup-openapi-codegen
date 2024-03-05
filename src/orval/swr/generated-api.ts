@@ -47,14 +47,17 @@ export const getApiV1FlowersFavorites = (
   params?: GetApiV1FlowersFavoritesParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<FavoriteList>> => {
-  return axios.default.get(`/api/v1/flowers/favorites`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers/favorites`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1FlowersFavoritesKey = (params?: GetApiV1FlowersFavoritesParams) =>
-  [`/api/v1/flowers/favorites`, ...(params ? [params] : [])] as const;
+  [
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/favorites`,
+    ...(params ? [params] : []),
+  ] as const;
 
 export type GetApiV1FlowersFavoritesQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1FlowersFavorites>>
@@ -98,7 +101,11 @@ export const postApiV1FlowersFlowerIdFavorites = (
   flowerId: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Favorite>> => {
-  return axios.default.post(`/api/v1/flowers/${flowerId}/favorites`, undefined, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/${flowerId}/favorites`,
+    undefined,
+    options,
+  );
 };
 
 export const getPostApiV1FlowersFlowerIdFavoritesMutationFetcher = (
@@ -110,7 +117,7 @@ export const getPostApiV1FlowersFlowerIdFavoritesMutationFetcher = (
   };
 };
 export const getPostApiV1FlowersFlowerIdFavoritesMutationKey = (flowerId: number) =>
-  `/api/v1/flowers/${flowerId}/favorites` as const;
+  `https://flowrspot-api.herokuapp.com/api/v1/flowers/${flowerId}/favorites` as const;
 
 export type PostApiV1FlowersFlowerIdFavoritesMutationResult = NonNullable<
   Awaited<ReturnType<typeof postApiV1FlowersFlowerIdFavorites>>
@@ -154,7 +161,10 @@ export const deleteApiV1FlowersFlowerIdFavoritesId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Favorite>> => {
-  return axios.default.delete(`/api/v1/flowers/${flowerId}/favorites/${id}`, options);
+  return axios.default.delete(
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/${flowerId}/favorites/${id}`,
+    options,
+  );
 };
 
 export const getDeleteApiV1FlowersFlowerIdFavoritesIdMutationFetcher = (
@@ -167,7 +177,7 @@ export const getDeleteApiV1FlowersFlowerIdFavoritesIdMutationFetcher = (
   };
 };
 export const getDeleteApiV1FlowersFlowerIdFavoritesIdMutationKey = (flowerId: number, id: number) =>
-  `/api/v1/flowers/${flowerId}/favorites/${id}` as const;
+  `https://flowrspot-api.herokuapp.com/api/v1/flowers/${flowerId}/favorites/${id}` as const;
 
 export type DeleteApiV1FlowersFlowerIdFavoritesIdMutationResult = NonNullable<
   Awaited<ReturnType<typeof deleteApiV1FlowersFlowerIdFavoritesId>>
@@ -212,11 +222,14 @@ export const getApiV1FlowersIdSightings = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<SightingList>> => {
-  return axios.default.get(`/api/v1/flowers/${id}/sightings`, options);
+  return axios.default.get(
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/${id}/sightings`,
+    options,
+  );
 };
 
 export const getGetApiV1FlowersIdSightingsKey = (id: number) =>
-  [`/api/v1/flowers/${id}/sightings`] as const;
+  [`https://flowrspot-api.herokuapp.com/api/v1/flowers/${id}/sightings`] as const;
 
 export type GetApiV1FlowersIdSightingsQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1FlowersIdSightings>>
@@ -260,14 +273,14 @@ export const getApiV1Flowers = (
   params?: GetApiV1FlowersParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<FlowerList>> => {
-  return axios.default.get(`/api/v1/flowers`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1FlowersKey = (params?: GetApiV1FlowersParams) =>
-  [`/api/v1/flowers`, ...(params ? [params] : [])] as const;
+  [`https://flowrspot-api.herokuapp.com/api/v1/flowers`, ...(params ? [params] : [])] as const;
 
 export type GetApiV1FlowersQueryResult = NonNullable<Awaited<ReturnType<typeof getApiV1Flowers>>>;
 export type GetApiV1FlowersQueryError = AxiosError<unknown>;
@@ -325,7 +338,11 @@ export const postApiV1Flowers = (
     formData.append('profile_picture', postApiV1FlowersBody.profile_picture);
   }
 
-  return axios.default.post(`/api/v1/flowers`, formData, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers`,
+    formData,
+    options,
+  );
 };
 
 export const getPostApiV1FlowersMutationFetcher = (options?: AxiosRequestConfig) => {
@@ -333,7 +350,8 @@ export const getPostApiV1FlowersMutationFetcher = (options?: AxiosRequestConfig)
     return postApiV1Flowers(arg as PostApiV1FlowersBody, options);
   };
 };
-export const getPostApiV1FlowersMutationKey = () => `/api/v1/flowers` as const;
+export const getPostApiV1FlowersMutationKey = () =>
+  `https://flowrspot-api.herokuapp.com/api/v1/flowers` as const;
 
 export type PostApiV1FlowersMutationResult = NonNullable<
   Awaited<ReturnType<typeof postApiV1Flowers>>
@@ -373,14 +391,17 @@ export const getApiV1FlowersRandom = (
   params?: GetApiV1FlowersRandomParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<FlowerList>> => {
-  return axios.default.get(`/api/v1/flowers/random`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers/random`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1FlowersRandomKey = (params?: GetApiV1FlowersRandomParams) =>
-  [`/api/v1/flowers/random`, ...(params ? [params] : [])] as const;
+  [
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/random`,
+    ...(params ? [params] : []),
+  ] as const;
 
 export type GetApiV1FlowersRandomQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1FlowersRandom>>
@@ -424,14 +445,17 @@ export const getApiV1FlowersSearch = (
   params: GetApiV1FlowersSearchParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<FlowerList>> => {
-  return axios.default.get(`/api/v1/flowers/search`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers/search`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1FlowersSearchKey = (params: GetApiV1FlowersSearchParams) =>
-  [`/api/v1/flowers/search`, ...(params ? [params] : [])] as const;
+  [
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/search`,
+    ...(params ? [params] : []),
+  ] as const;
 
 export type GetApiV1FlowersSearchQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1FlowersSearch>>
@@ -475,10 +499,11 @@ export const getApiV1FlowersId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Flower>> => {
-  return axios.default.get(`/api/v1/flowers/${id}`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers/${id}`, options);
 };
 
-export const getGetApiV1FlowersIdKey = (id: number) => [`/api/v1/flowers/${id}`] as const;
+export const getGetApiV1FlowersIdKey = (id: number) =>
+  [`https://flowrspot-api.herokuapp.com/api/v1/flowers/${id}`] as const;
 
 export type GetApiV1FlowersIdQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1FlowersId>>
@@ -521,7 +546,11 @@ export const postApiV1UsersRegister = (
   postApiV1UsersRegisterBody: PostApiV1UsersRegisterBody,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<AuthToken>> => {
-  return axios.default.post(`/api/v1/users/register`, postApiV1UsersRegisterBody, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/users/register`,
+    postApiV1UsersRegisterBody,
+    options,
+  );
 };
 
 export const getPostApiV1UsersRegisterMutationFetcher = (options?: AxiosRequestConfig) => {
@@ -529,7 +558,8 @@ export const getPostApiV1UsersRegisterMutationFetcher = (options?: AxiosRequestC
     return postApiV1UsersRegister(arg as PostApiV1UsersRegisterBody, options);
   };
 };
-export const getPostApiV1UsersRegisterMutationKey = () => `/api/v1/users/register` as const;
+export const getPostApiV1UsersRegisterMutationKey = () =>
+  `https://flowrspot-api.herokuapp.com/api/v1/users/register` as const;
 
 export type PostApiV1UsersRegisterMutationResult = NonNullable<
   Awaited<ReturnType<typeof postApiV1UsersRegister>>
@@ -569,7 +599,11 @@ export const postApiV1UsersLogin = (
   postApiV1UsersLoginBody: PostApiV1UsersLoginBody,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<AuthToken>> => {
-  return axios.default.post(`/api/v1/users/login`, postApiV1UsersLoginBody, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/users/login`,
+    postApiV1UsersLoginBody,
+    options,
+  );
 };
 
 export const getPostApiV1UsersLoginMutationFetcher = (options?: AxiosRequestConfig) => {
@@ -577,7 +611,8 @@ export const getPostApiV1UsersLoginMutationFetcher = (options?: AxiosRequestConf
     return postApiV1UsersLogin(arg as PostApiV1UsersLoginBody, options);
   };
 };
-export const getPostApiV1UsersLoginMutationKey = () => `/api/v1/users/login` as const;
+export const getPostApiV1UsersLoginMutationKey = () =>
+  `https://flowrspot-api.herokuapp.com/api/v1/users/login` as const;
 
 export type PostApiV1UsersLoginMutationResult = NonNullable<
   Awaited<ReturnType<typeof postApiV1UsersLogin>>
@@ -618,7 +653,10 @@ export const deleteApiV1SightingsSightingIdCommentsId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Comment>> => {
-  return axios.default.delete(`/api/v1/sightings/${sightingId}/comments/${id}`, options);
+  return axios.default.delete(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments/${id}`,
+    options,
+  );
 };
 
 export const getDeleteApiV1SightingsSightingIdCommentsIdMutationFetcher = (
@@ -633,7 +671,7 @@ export const getDeleteApiV1SightingsSightingIdCommentsIdMutationFetcher = (
 export const getDeleteApiV1SightingsSightingIdCommentsIdMutationKey = (
   sightingId: number,
   id: number,
-) => `/api/v1/sightings/${sightingId}/comments/${id}` as const;
+) => `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments/${id}` as const;
 
 export type DeleteApiV1SightingsSightingIdCommentsIdMutationResult = NonNullable<
   Awaited<ReturnType<typeof deleteApiV1SightingsSightingIdCommentsId>>
@@ -683,16 +721,23 @@ export const getApiV1SightingsSightingIdComments = (
   params?: GetApiV1SightingsSightingIdCommentsParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<CommentList>> => {
-  return axios.default.get(`/api/v1/sightings/${sightingId}/comments`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  return axios.default.get(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments`,
+    {
+      ...options,
+      params: { ...params, ...options?.params },
+    },
+  );
 };
 
 export const getGetApiV1SightingsSightingIdCommentsKey = (
   sightingId: number,
   params?: GetApiV1SightingsSightingIdCommentsParams,
-) => [`/api/v1/sightings/${sightingId}/comments`, ...(params ? [params] : [])] as const;
+) =>
+  [
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments`,
+    ...(params ? [params] : []),
+  ] as const;
 
 export type GetApiV1SightingsSightingIdCommentsQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1SightingsSightingIdComments>>
@@ -740,7 +785,7 @@ export const postApiV1SightingsSightingIdComments = (
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Comment>> => {
   return axios.default.post(
-    `/api/v1/sightings/${sightingId}/comments`,
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments`,
     postApiV1SightingsSightingIdCommentsBody,
     options,
   );
@@ -759,7 +804,7 @@ export const getPostApiV1SightingsSightingIdCommentsMutationFetcher = (
   };
 };
 export const getPostApiV1SightingsSightingIdCommentsMutationKey = (sightingId: number) =>
-  `/api/v1/sightings/${sightingId}/comments` as const;
+  `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments` as const;
 
 export type PostApiV1SightingsSightingIdCommentsMutationResult = NonNullable<
   Awaited<ReturnType<typeof postApiV1SightingsSightingIdComments>>
@@ -803,7 +848,10 @@ export const deleteApiV1SightingsSightingIdLikes = (
   sightingId: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Like>> => {
-  return axios.default.delete(`/api/v1/sightings/${sightingId}/likes`, options);
+  return axios.default.delete(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes`,
+    options,
+  );
 };
 
 export const getDeleteApiV1SightingsSightingIdLikesMutationFetcher = (
@@ -815,7 +863,7 @@ export const getDeleteApiV1SightingsSightingIdLikesMutationFetcher = (
   };
 };
 export const getDeleteApiV1SightingsSightingIdLikesMutationKey = (sightingId: number) =>
-  `/api/v1/sightings/${sightingId}/likes` as const;
+  `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes` as const;
 
 export type DeleteApiV1SightingsSightingIdLikesMutationResult = NonNullable<
   Awaited<ReturnType<typeof deleteApiV1SightingsSightingIdLikes>>
@@ -860,16 +908,23 @@ export const getApiV1SightingsSightingIdLikes = (
   params?: GetApiV1SightingsSightingIdLikesParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<LikeList>> => {
-  return axios.default.get(`/api/v1/sightings/${sightingId}/likes`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  return axios.default.get(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes`,
+    {
+      ...options,
+      params: { ...params, ...options?.params },
+    },
+  );
 };
 
 export const getGetApiV1SightingsSightingIdLikesKey = (
   sightingId: number,
   params?: GetApiV1SightingsSightingIdLikesParams,
-) => [`/api/v1/sightings/${sightingId}/likes`, ...(params ? [params] : [])] as const;
+) =>
+  [
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes`,
+    ...(params ? [params] : []),
+  ] as const;
 
 export type GetApiV1SightingsSightingIdLikesQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1SightingsSightingIdLikes>>
@@ -915,7 +970,11 @@ export const postApiV1SightingsSightingIdLikes = (
   sightingId: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Like>> => {
-  return axios.default.post(`/api/v1/sightings/${sightingId}/likes`, undefined, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes`,
+    undefined,
+    options,
+  );
 };
 
 export const getPostApiV1SightingsSightingIdLikesMutationFetcher = (
@@ -927,7 +986,7 @@ export const getPostApiV1SightingsSightingIdLikesMutationFetcher = (
   };
 };
 export const getPostApiV1SightingsSightingIdLikesMutationKey = (sightingId: number) =>
-  `/api/v1/sightings/${sightingId}/likes` as const;
+  `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes` as const;
 
 export type PostApiV1SightingsSightingIdLikesMutationResult = NonNullable<
   Awaited<ReturnType<typeof postApiV1SightingsSightingIdLikes>>
@@ -970,14 +1029,14 @@ export const getApiV1Sightings = (
   params?: GetApiV1SightingsParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<SightingList>> => {
-  return axios.default.get(`/api/v1/sightings`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/sightings`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1SightingsKey = (params?: GetApiV1SightingsParams) =>
-  [`/api/v1/sightings`, ...(params ? [params] : [])] as const;
+  [`https://flowrspot-api.herokuapp.com/api/v1/sightings`, ...(params ? [params] : [])] as const;
 
 export type GetApiV1SightingsQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1Sightings>>
@@ -1040,7 +1099,11 @@ export const postApiV1Sightings = (
     formData.append('picture', postApiV1SightingsBody.picture);
   }
 
-  return axios.default.post(`/api/v1/sightings`, formData, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings`,
+    formData,
+    options,
+  );
 };
 
 export const getPostApiV1SightingsMutationFetcher = (options?: AxiosRequestConfig) => {
@@ -1048,7 +1111,8 @@ export const getPostApiV1SightingsMutationFetcher = (options?: AxiosRequestConfi
     return postApiV1Sightings(arg as PostApiV1SightingsBody, options);
   };
 };
-export const getPostApiV1SightingsMutationKey = () => `/api/v1/sightings` as const;
+export const getPostApiV1SightingsMutationKey = () =>
+  `https://flowrspot-api.herokuapp.com/api/v1/sightings` as const;
 
 export type PostApiV1SightingsMutationResult = NonNullable<
   Awaited<ReturnType<typeof postApiV1Sightings>>
@@ -1088,10 +1152,11 @@ export const getApiV1SightingsId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Sighting>> => {
-  return axios.default.get(`/api/v1/sightings/${id}`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}`, options);
 };
 
-export const getGetApiV1SightingsIdKey = (id: number) => [`/api/v1/sightings/${id}`] as const;
+export const getGetApiV1SightingsIdKey = (id: number) =>
+  [`https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}`] as const;
 
 export type GetApiV1SightingsIdQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1SightingsId>>
@@ -1135,7 +1200,11 @@ export const putApiV1SightingsId = (
   putApiV1SightingsIdBody: PutApiV1SightingsIdBody,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Sighting>> => {
-  return axios.default.put(`/api/v1/sightings/${id}`, putApiV1SightingsIdBody, options);
+  return axios.default.put(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}`,
+    putApiV1SightingsIdBody,
+    options,
+  );
 };
 
 export const getPutApiV1SightingsIdMutationFetcher = (id: number, options?: AxiosRequestConfig) => {
@@ -1143,7 +1212,8 @@ export const getPutApiV1SightingsIdMutationFetcher = (id: number, options?: Axio
     return putApiV1SightingsId(id, arg as PutApiV1SightingsIdBody, options);
   };
 };
-export const getPutApiV1SightingsIdMutationKey = (id: number) => `/api/v1/sightings/${id}` as const;
+export const getPutApiV1SightingsIdMutationKey = (id: number) =>
+  `https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}` as const;
 
 export type PutApiV1SightingsIdMutationResult = NonNullable<
   Awaited<ReturnType<typeof putApiV1SightingsId>>
@@ -1186,7 +1256,10 @@ export const deleteApiV1SightingsId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Sighting>> => {
-  return axios.default.delete(`/api/v1/sightings/${id}`, options);
+  return axios.default.delete(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}`,
+    options,
+  );
 };
 
 export const getDeleteApiV1SightingsIdMutationFetcher = (
@@ -1198,7 +1271,7 @@ export const getDeleteApiV1SightingsIdMutationFetcher = (
   };
 };
 export const getDeleteApiV1SightingsIdMutationKey = (id: number) =>
-  `/api/v1/sightings/${id}` as const;
+  `https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}` as const;
 
 export type DeleteApiV1SightingsIdMutationResult = NonNullable<
   Awaited<ReturnType<typeof deleteApiV1SightingsId>>
@@ -1241,11 +1314,14 @@ export const getApiV1UsersIdSightings = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<SightingList>> => {
-  return axios.default.get(`/api/v1/users/${id}/sightings`, options);
+  return axios.default.get(
+    `https://flowrspot-api.herokuapp.com/api/v1/users/${id}/sightings`,
+    options,
+  );
 };
 
 export const getGetApiV1UsersIdSightingsKey = (id: number) =>
-  [`/api/v1/users/${id}/sightings`] as const;
+  [`https://flowrspot-api.herokuapp.com/api/v1/users/${id}/sightings`] as const;
 
 export type GetApiV1UsersIdSightingsQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1UsersIdSightings>>
@@ -1286,10 +1362,11 @@ export const useGetApiV1UsersIdSightings = <TError = AxiosError<unknown>>(
  * @summary info about me
  */
 export const getApiV1UsersMe = (options?: AxiosRequestConfig): Promise<AxiosResponse<User>> => {
-  return axios.default.get(`/api/v1/users/me`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/users/me`, options);
 };
 
-export const getGetApiV1UsersMeKey = () => [`/api/v1/users/me`] as const;
+export const getGetApiV1UsersMeKey = () =>
+  [`https://flowrspot-api.herokuapp.com/api/v1/users/me`] as const;
 
 export type GetApiV1UsersMeQueryResult = NonNullable<Awaited<ReturnType<typeof getApiV1UsersMe>>>;
 export type GetApiV1UsersMeQueryError = AxiosError<unknown>;
@@ -1327,7 +1404,11 @@ export const putApiV1UsersMe = (
   putApiV1UsersMeBody: PutApiV1UsersMeBody,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<User>> => {
-  return axios.default.put(`/api/v1/users/me`, putApiV1UsersMeBody, options);
+  return axios.default.put(
+    `https://flowrspot-api.herokuapp.com/api/v1/users/me`,
+    putApiV1UsersMeBody,
+    options,
+  );
 };
 
 export const getPutApiV1UsersMeMutationFetcher = (options?: AxiosRequestConfig) => {
@@ -1335,7 +1416,8 @@ export const getPutApiV1UsersMeMutationFetcher = (options?: AxiosRequestConfig) 
     return putApiV1UsersMe(arg as PutApiV1UsersMeBody, options);
   };
 };
-export const getPutApiV1UsersMeMutationKey = () => `/api/v1/users/me` as const;
+export const getPutApiV1UsersMeMutationKey = () =>
+  `https://flowrspot-api.herokuapp.com/api/v1/users/me` as const;
 
 export type PutApiV1UsersMeMutationResult = NonNullable<
   Awaited<ReturnType<typeof putApiV1UsersMe>>
@@ -1374,10 +1456,11 @@ export const usePutApiV1UsersMe = <TError = AxiosError<unknown>>(options?: {
 export const getApiV1UsersMeRefresh = (
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<AuthToken>> => {
-  return axios.default.get(`/api/v1/users/me/refresh`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/users/me/refresh`, options);
 };
 
-export const getGetApiV1UsersMeRefreshKey = () => [`/api/v1/users/me/refresh`] as const;
+export const getGetApiV1UsersMeRefreshKey = () =>
+  [`https://flowrspot-api.herokuapp.com/api/v1/users/me/refresh`] as const;
 
 export type GetApiV1UsersMeRefreshQueryResult = NonNullable<
   Awaited<ReturnType<typeof getApiV1UsersMeRefresh>>
@@ -1417,10 +1500,11 @@ export const getApiV1UsersId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<User>> => {
-  return axios.default.get(`/api/v1/users/${id}`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/users/${id}`, options);
 };
 
-export const getGetApiV1UsersIdKey = (id: number) => [`/api/v1/users/${id}`] as const;
+export const getGetApiV1UsersIdKey = (id: number) =>
+  [`https://flowrspot-api.herokuapp.com/api/v1/users/${id}`] as const;
 
 export type GetApiV1UsersIdQueryResult = NonNullable<Awaited<ReturnType<typeof getApiV1UsersId>>>;
 export type GetApiV1UsersIdQueryError = AxiosError<unknown>;

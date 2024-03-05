@@ -1,15 +1,15 @@
 import { zodiosClient } from './zodios-client';
 
 const ZodiosConsumer = () => {
-  const testEndpoint = async () => {
+  const getFlowerSightings = async () => {
     const flowers = await zodiosClient.getApiv1flowersIdsightings({
       params: {
         id: 2,
       },
     });
-    console.log('flow', flowers);
+    console.log('flowers', flowers);
   };
-  return <div onClick={testEndpoint}>ZodiosConsumer</div>;
+  return <div onClick={getFlowerSightings}></div>;
 };
 
 export default ZodiosConsumer;

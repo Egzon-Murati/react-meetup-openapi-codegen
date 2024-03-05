@@ -7,6 +7,9 @@ export default defineConfig({
       target: './swr/generated-api.ts',
       client: 'swr',
       prettier: true,
+      baseUrl: 'https://flowrspot-api.herokuapp.com',
+
+      mock: true,
     },
     input: {
       target: '../swagger/openAPI.json',

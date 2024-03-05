@@ -15,14 +15,17 @@
     "zodios-generate-api": "openapi-zod-client ./src/swagger/openAPI.json -o ./src/zodios/generated-client.ts"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@reduxjs/toolkit": "^2.2.1",
     "@rtk-query/codegen-openapi": "^1.2.0",
-    "@tanstack/react-query": "^5.24.1",
+    "@tanstack/react-query": "^4.36.1",
     "@zodios/core": "^10.9.6",
+    "@zodios/react": "^10.4.5",
     "axios": "^1.6.7",
     "dotenv": "^16.4.5",
     "esbuild-runner": "^2.2.2",
     "fs": "0.0.1-security",
+    "msw": "^2.2.2",
     "orval": "^6.25.0",
     "path": "^0.12.7",
     "react": "^18.2.0",
