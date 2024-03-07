@@ -52,14 +52,17 @@ export const getApiV1FlowersFavorites = (
   params?: GetApiV1FlowersFavoritesParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<FavoriteList>> => {
-  return axios.default.get(`/api/v1/flowers/favorites`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers/favorites`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1FlowersFavoritesQueryKey = (params?: GetApiV1FlowersFavoritesParams) => {
-  return [`/api/v1/flowers/favorites`, ...(params ? [params] : [])] as const;
+  return [
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/favorites`,
+    ...(params ? [params] : []),
+  ] as const;
 };
 
 export const getGetApiV1FlowersFavoritesQueryOptions = <
@@ -121,7 +124,11 @@ export const postApiV1FlowersFlowerIdFavorites = (
   flowerId: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Favorite>> => {
-  return axios.default.post(`/api/v1/flowers/${flowerId}/favorites`, undefined, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/${flowerId}/favorites`,
+    undefined,
+    options,
+  );
 };
 
 export const getPostApiV1FlowersFlowerIdFavoritesMutationOptions = <
@@ -189,7 +196,10 @@ export const deleteApiV1FlowersFlowerIdFavoritesId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Favorite>> => {
-  return axios.default.delete(`/api/v1/flowers/${flowerId}/favorites/${id}`, options);
+  return axios.default.delete(
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/${flowerId}/favorites/${id}`,
+    options,
+  );
 };
 
 export const getDeleteApiV1FlowersFlowerIdFavoritesIdMutationOptions = <
@@ -256,11 +266,14 @@ export const getApiV1FlowersIdSightings = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<SightingList>> => {
-  return axios.default.get(`/api/v1/flowers/${id}/sightings`, options);
+  return axios.default.get(
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/${id}/sightings`,
+    options,
+  );
 };
 
 export const getGetApiV1FlowersIdSightingsQueryKey = (id: number) => {
-  return [`/api/v1/flowers/${id}/sightings`] as const;
+  return [`https://flowrspot-api.herokuapp.com/api/v1/flowers/${id}/sightings`] as const;
 };
 
 export const getGetApiV1FlowersIdSightingsQueryOptions = <
@@ -322,14 +335,17 @@ export const getApiV1Flowers = (
   params?: GetApiV1FlowersParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<FlowerList>> => {
-  return axios.default.get(`/api/v1/flowers`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1FlowersQueryKey = (params?: GetApiV1FlowersParams) => {
-  return [`/api/v1/flowers`, ...(params ? [params] : [])] as const;
+  return [
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers`,
+    ...(params ? [params] : []),
+  ] as const;
 };
 
 export const getGetApiV1FlowersQueryOptions = <
@@ -405,7 +421,11 @@ export const postApiV1Flowers = (
     formData.append('profile_picture', postApiV1FlowersBody.profile_picture);
   }
 
-  return axios.default.post(`/api/v1/flowers`, formData, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers`,
+    formData,
+    options,
+  );
 };
 
 export const getPostApiV1FlowersMutationOptions = <
@@ -469,14 +489,17 @@ export const getApiV1FlowersRandom = (
   params?: GetApiV1FlowersRandomParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<FlowerList>> => {
-  return axios.default.get(`/api/v1/flowers/random`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers/random`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1FlowersRandomQueryKey = (params?: GetApiV1FlowersRandomParams) => {
-  return [`/api/v1/flowers/random`, ...(params ? [params] : [])] as const;
+  return [
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/random`,
+    ...(params ? [params] : []),
+  ] as const;
 };
 
 export const getGetApiV1FlowersRandomQueryOptions = <
@@ -537,14 +560,17 @@ export const getApiV1FlowersSearch = (
   params: GetApiV1FlowersSearchParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<FlowerList>> => {
-  return axios.default.get(`/api/v1/flowers/search`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers/search`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1FlowersSearchQueryKey = (params: GetApiV1FlowersSearchParams) => {
-  return [`/api/v1/flowers/search`, ...(params ? [params] : [])] as const;
+  return [
+    `https://flowrspot-api.herokuapp.com/api/v1/flowers/search`,
+    ...(params ? [params] : []),
+  ] as const;
 };
 
 export const getGetApiV1FlowersSearchQueryOptions = <
@@ -605,11 +631,11 @@ export const getApiV1FlowersId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Flower>> => {
-  return axios.default.get(`/api/v1/flowers/${id}`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/flowers/${id}`, options);
 };
 
 export const getGetApiV1FlowersIdQueryKey = (id: number) => {
-  return [`/api/v1/flowers/${id}`] as const;
+  return [`https://flowrspot-api.herokuapp.com/api/v1/flowers/${id}`] as const;
 };
 
 export const getGetApiV1FlowersIdQueryOptions = <
@@ -670,7 +696,11 @@ export const postApiV1UsersRegister = (
   postApiV1UsersRegisterBody: PostApiV1UsersRegisterBody,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<AuthToken>> => {
-  return axios.default.post(`/api/v1/users/register`, postApiV1UsersRegisterBody, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/users/register`,
+    postApiV1UsersRegisterBody,
+    options,
+  );
 };
 
 export const getPostApiV1UsersRegisterMutationOptions = <
@@ -737,7 +767,11 @@ export const postApiV1UsersLogin = (
   postApiV1UsersLoginBody: PostApiV1UsersLoginBody,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<AuthToken>> => {
-  return axios.default.post(`/api/v1/users/login`, postApiV1UsersLoginBody, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/users/login`,
+    postApiV1UsersLoginBody,
+    options,
+  );
 };
 
 export const getPostApiV1UsersLoginMutationOptions = <
@@ -805,7 +839,10 @@ export const deleteApiV1SightingsSightingIdCommentsId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Comment>> => {
-  return axios.default.delete(`/api/v1/sightings/${sightingId}/comments/${id}`, options);
+  return axios.default.delete(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments/${id}`,
+    options,
+  );
 };
 
 export const getDeleteApiV1SightingsSightingIdCommentsIdMutationOptions = <
@@ -873,17 +910,23 @@ export const getApiV1SightingsSightingIdComments = (
   params?: GetApiV1SightingsSightingIdCommentsParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<CommentList>> => {
-  return axios.default.get(`/api/v1/sightings/${sightingId}/comments`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  return axios.default.get(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments`,
+    {
+      ...options,
+      params: { ...params, ...options?.params },
+    },
+  );
 };
 
 export const getGetApiV1SightingsSightingIdCommentsQueryKey = (
   sightingId: number,
   params?: GetApiV1SightingsSightingIdCommentsParams,
 ) => {
-  return [`/api/v1/sightings/${sightingId}/comments`, ...(params ? [params] : [])] as const;
+  return [
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments`,
+    ...(params ? [params] : []),
+  ] as const;
 };
 
 export const getGetApiV1SightingsSightingIdCommentsQueryOptions = <
@@ -962,7 +1005,7 @@ export const postApiV1SightingsSightingIdComments = (
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Comment>> => {
   return axios.default.post(
-    `/api/v1/sightings/${sightingId}/comments`,
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/comments`,
     postApiV1SightingsSightingIdCommentsBody,
     options,
   );
@@ -1033,7 +1076,10 @@ export const deleteApiV1SightingsSightingIdLikes = (
   sightingId: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Like>> => {
-  return axios.default.delete(`/api/v1/sightings/${sightingId}/likes`, options);
+  return axios.default.delete(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes`,
+    options,
+  );
 };
 
 export const getDeleteApiV1SightingsSightingIdLikesMutationOptions = <
@@ -1101,17 +1147,23 @@ export const getApiV1SightingsSightingIdLikes = (
   params?: GetApiV1SightingsSightingIdLikesParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<LikeList>> => {
-  return axios.default.get(`/api/v1/sightings/${sightingId}/likes`, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  return axios.default.get(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes`,
+    {
+      ...options,
+      params: { ...params, ...options?.params },
+    },
+  );
 };
 
 export const getGetApiV1SightingsSightingIdLikesQueryKey = (
   sightingId: number,
   params?: GetApiV1SightingsSightingIdLikesParams,
 ) => {
-  return [`/api/v1/sightings/${sightingId}/likes`, ...(params ? [params] : [])] as const;
+  return [
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes`,
+    ...(params ? [params] : []),
+  ] as const;
 };
 
 export const getGetApiV1SightingsSightingIdLikesQueryOptions = <
@@ -1184,7 +1236,11 @@ export const postApiV1SightingsSightingIdLikes = (
   sightingId: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Like>> => {
-  return axios.default.post(`/api/v1/sightings/${sightingId}/likes`, undefined, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${sightingId}/likes`,
+    undefined,
+    options,
+  );
 };
 
 export const getPostApiV1SightingsSightingIdLikesMutationOptions = <
@@ -1251,14 +1307,17 @@ export const getApiV1Sightings = (
   params?: GetApiV1SightingsParams,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<SightingList>> => {
-  return axios.default.get(`/api/v1/sightings`, {
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/sightings`, {
     ...options,
     params: { ...params, ...options?.params },
   });
 };
 
 export const getGetApiV1SightingsQueryKey = (params?: GetApiV1SightingsParams) => {
-  return [`/api/v1/sightings`, ...(params ? [params] : [])] as const;
+  return [
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings`,
+    ...(params ? [params] : []),
+  ] as const;
 };
 
 export const getGetApiV1SightingsQueryOptions = <
@@ -1339,7 +1398,11 @@ export const postApiV1Sightings = (
     formData.append('picture', postApiV1SightingsBody.picture);
   }
 
-  return axios.default.post(`/api/v1/sightings`, formData, options);
+  return axios.default.post(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings`,
+    formData,
+    options,
+  );
 };
 
 export const getPostApiV1SightingsMutationOptions = <
@@ -1403,11 +1466,11 @@ export const getApiV1SightingsId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Sighting>> => {
-  return axios.default.get(`/api/v1/sightings/${id}`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}`, options);
 };
 
 export const getGetApiV1SightingsIdQueryKey = (id: number) => {
-  return [`/api/v1/sightings/${id}`] as const;
+  return [`https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}`] as const;
 };
 
 export const getGetApiV1SightingsIdQueryOptions = <
@@ -1469,7 +1532,11 @@ export const putApiV1SightingsId = (
   putApiV1SightingsIdBody: PutApiV1SightingsIdBody,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Sighting>> => {
-  return axios.default.put(`/api/v1/sightings/${id}`, putApiV1SightingsIdBody, options);
+  return axios.default.put(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}`,
+    putApiV1SightingsIdBody,
+    options,
+  );
 };
 
 export const getPutApiV1SightingsIdMutationOptions = <
@@ -1533,7 +1600,10 @@ export const deleteApiV1SightingsId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<Sighting>> => {
-  return axios.default.delete(`/api/v1/sightings/${id}`, options);
+  return axios.default.delete(
+    `https://flowrspot-api.herokuapp.com/api/v1/sightings/${id}`,
+    options,
+  );
 };
 
 export const getDeleteApiV1SightingsIdMutationOptions = <
@@ -1600,11 +1670,14 @@ export const getApiV1UsersIdSightings = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<SightingList>> => {
-  return axios.default.get(`/api/v1/users/${id}/sightings`, options);
+  return axios.default.get(
+    `https://flowrspot-api.herokuapp.com/api/v1/users/${id}/sightings`,
+    options,
+  );
 };
 
 export const getGetApiV1UsersIdSightingsQueryKey = (id: number) => {
-  return [`/api/v1/users/${id}/sightings`] as const;
+  return [`https://flowrspot-api.herokuapp.com/api/v1/users/${id}/sightings`] as const;
 };
 
 export const getGetApiV1UsersIdSightingsQueryOptions = <
@@ -1663,11 +1736,11 @@ export const useGetApiV1UsersIdSightings = <
  * @summary info about me
  */
 export const getApiV1UsersMe = (options?: AxiosRequestConfig): Promise<AxiosResponse<User>> => {
-  return axios.default.get(`/api/v1/users/me`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/users/me`, options);
 };
 
 export const getGetApiV1UsersMeQueryKey = () => {
-  return [`/api/v1/users/me`] as const;
+  return [`https://flowrspot-api.herokuapp.com/api/v1/users/me`] as const;
 };
 
 export const getGetApiV1UsersMeQueryOptions = <
@@ -1720,7 +1793,11 @@ export const putApiV1UsersMe = (
   putApiV1UsersMeBody: PutApiV1UsersMeBody,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<User>> => {
-  return axios.default.put(`/api/v1/users/me`, putApiV1UsersMeBody, options);
+  return axios.default.put(
+    `https://flowrspot-api.herokuapp.com/api/v1/users/me`,
+    putApiV1UsersMeBody,
+    options,
+  );
 };
 
 export const getPutApiV1UsersMeMutationOptions = <
@@ -1783,11 +1860,11 @@ export const usePutApiV1UsersMe = <TError = AxiosError<unknown>, TContext = unkn
 export const getApiV1UsersMeRefresh = (
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<AuthToken>> => {
-  return axios.default.get(`/api/v1/users/me/refresh`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/users/me/refresh`, options);
 };
 
 export const getGetApiV1UsersMeRefreshQueryKey = () => {
-  return [`/api/v1/users/me/refresh`] as const;
+  return [`https://flowrspot-api.herokuapp.com/api/v1/users/me/refresh`] as const;
 };
 
 export const getGetApiV1UsersMeRefreshQueryOptions = <
@@ -1842,11 +1919,11 @@ export const getApiV1UsersId = (
   id: number,
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<User>> => {
-  return axios.default.get(`/api/v1/users/${id}`, options);
+  return axios.default.get(`https://flowrspot-api.herokuapp.com/api/v1/users/${id}`, options);
 };
 
 export const getGetApiV1UsersIdQueryKey = (id: number) => {
-  return [`/api/v1/users/${id}`] as const;
+  return [`https://flowrspot-api.herokuapp.com/api/v1/users/${id}`] as const;
 };
 
 export const getGetApiV1UsersIdQueryOptions = <
