@@ -8,7 +8,6 @@ export default defineConfig({
       client: 'swr',
       prettier: true,
       baseUrl: 'https://flowrspot-api.herokuapp.com',
-
       mock: true,
     },
     input: {
