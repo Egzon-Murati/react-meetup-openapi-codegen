@@ -10,9 +10,6 @@ This repository explores and tests various code generation tools for integrating
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Supported Codegen Tools](#supported-codegen-tools)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
