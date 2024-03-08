@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+# Codegen Tools for OpenAPI in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This repository explores and tests various code generation tools for integrating OpenAPI JSON files to generate API definitions on the React side. The goal is to streamline the development process and enhance the consistency of API integrations within React applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Supported Codegen Tools](#supported-codegen-tools)
+- [Contributing](#contributing)
+- [License](#license)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Introduction
 
-- Configure the top-level `parserOptions` property like this:
+Modern web applications often rely on API integrations to interact with backend services. This repository focuses on exploring different code generation tools that leverage OpenAPI JSON files to generate API definitions in the React ecosystem. This approach aims to automate and standardize the process of API integration, reducing manual effort and enhancing code consistency.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Features
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Code Generation:** Automatically generate API definitions based on OpenAPI JSON files.
+- **React Integration:** Seamless integration of generated code within React applications.
+- **Tool Comparison:** Evaluate and compare various code generation tools to determine the most suitable for your project.
+
+## Getting Started
+
+To get started with this project, follow these steps:
+
+1. Clone the repository:
+2. Install dependencies `pnpm install`
+3. Start dev server `pnpm dev`
+
+## Usage
+
+### Running the Codegen
+
+- **RTK-Query:** `pnpm rtk-generate-api`
+- **SWR:** `pnpm swr-generate-api`
+- **React-Query:** `pnpm rq-generate-api`
+- **Zodios:** `pnpm zodios-generate-api`
+
+Feel free to contribute by adding support for additional tools or improving existing integrations.
+
+Contributions are welcome!
